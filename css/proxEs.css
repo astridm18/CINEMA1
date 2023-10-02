@@ -1,0 +1,607 @@
+/* Permite el uso de fonts externas */
+@font-face {
+  font-family: amazon;
+  src: url("../resources/fonts y pdfs/amazon.ttf") format("truetype");
+  /* En la ruta siempre poner la barra diagonal, no la invertida */
+}
+
+/*Animación que expande y reduce*/
+@keyframes animacion {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'amazon', 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+}
+
+.panel ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menucine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.menucine>li {
+  flex: 1;
+  text-align: center;
+
+}
+
+
+.menucine>li:last-child {
+  text-align: right;
+}
+
+.menucine>li>a {
+  display: block;
+  padding: 16px 22px;
+  color: #080202;
+  text-decoration: none;
+  letter-spacing: 2px;
+  align-items: center;
+}
+
+.menucine li a:hover {
+  color: rgb(51, 9, 166);
+}
+
+.Scontacto {
+  position: absolute;
+  background: whitesmoke;
+  width: 15%;
+  display: none;
+
+}
+
+.Scontacto li a {
+  display: block;
+  padding: 10px;
+  color: rgb(28, 1, 28);
+  text-decoration: none;
+}
+
+.menucine li:hover .Scontacto {
+  display: block;
+}
+
+/*AGREGANDO AQUIIII PRUEBAAAA*/
+.icono {
+  position: relative;
+  align-items: center;
+}
+
+.icono .Scontacto {
+  position: absolute;
+  background: whitesmoke;
+  width: 90%;
+  display: none;
+  top: 100%;
+  left: 0;
+  padding: 0;
+}
+
+.cerrar-sesion {
+  text-align: center;
+}
+
+.icono:hover .Scontacto {
+  display: block;
+}
+
+body {
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
+.titulo-central {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(51, 9, 166);
+  font-size: 50px;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  animation: animacion 4s;
+  /* Aplica la animación de expandir y reducir en 4sg*/
+}
+
+.clear {
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+  border: 0px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+a:focus,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  color: #e73700;
+}
+
+h2 {
+  margin-bottom: 48px;
+  padding-bottom: 16px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  position: relative;
+  text-transform: capitalize;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+button {
+  outline: none !important;
+}
+
+/******* Common Element CSS End *********/
+
+/* -------- title style ------- */
+.line-title {
+  position: relative;
+  width: 400px;
+}
+
+.line-title::before,
+.line-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.line-title::before {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.line-title::after {
+  width: 32px;
+  background: #e73700;
+}
+
+/******* Middle section CSS Start ******/
+/* -------- Landing page ------- */
+.game-section {
+  padding: 60px 50px;
+}
+
+.game-section .owl-stage {
+  margin: 15px 0;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.game-section .item {
+  margin: 0 15px 60px;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  background: #343434 no-repeat center center / cover;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.game-section .item.active {
+  width: 500px;
+  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+}
+
+.game-section .item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.game-section .item-desc {
+  padding: 0 24px 12px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateY(calc(100% - 54px));
+  -webkit-transform: translateY(calc(100% - 54px));
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  margin-bottom: 40px;
+}
+
+.game-section .item.active .item-desc {
+  transform: none;
+  -webkit-transform: none;
+}
+
+.game-section .item-desc p {
+  opacity: 0;
+  -webkit-transform: translateY(32px);
+  transform: translateY(32px);
+  transition: all 0.4s ease-in-out 0.2s;
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+}
+
+.game-section .item.active .item-desc p {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.game-section .owl-theme.custom-carousel .owl-dots {
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
+}
+
+/******** Middle section CSS End *******/
+
+/***** responsive css Start ******/
+
+.item {
+  position: relative;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.item.active::before {
+  filter: brightness(70%);
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 50px 30px;
+  }
+
+  .game-section .item {
+    margin: 0 12px 60px;
+    width: 260px;
+    height: 360px;
+  }
+
+  .game-section .item.active {
+    width: 400px;
+  }
+
+  .game-section .item-desc {
+    transform: translateY(calc(100% - 46px));
+    -webkit-transform: translateY(calc(100% - 46px));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .line-title {
+    width: 330px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 50px 30px 40px;
+  }
+
+  .game-section .item {
+    margin: 0 12px 60px;
+    width: 240px;
+    height: 330px;
+  }
+
+  .game-section .item.active {
+    width: 360px;
+  }
+
+  .game-section .item-desc {
+    transform: translateY(calc(100% - 42px));
+    -webkit-transform: translateY(calc(100% - 42px));
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .line-title {
+    width: 250px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 30px 15px 20px;
+  }
+
+  .game-section .item {
+    margin: 0 10px 40px;
+    width: 200px;
+    height: 280px;
+  }
+
+  .game-section .item.active {
+    width: 270px;
+    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .game-section .item-desc {
+    padding: 0 14px 5px;
+    transform: translateY(calc(100% - 42px));
+    -webkit-transform: translateY(calc(100% - 42px));
+  }
+}
+
+/* CSS FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(51, 9, 166);
+  color: #F9F5F6;
+}
+
+.panel2 ul {
+  list-style: none;
+}
+
+.panel2 li img:hover {
+  transform: scale(1.2);
+  /* Aumenta el tamaño del icono al hacer hover */
+  transition: transform 0.2s ease-in-out;
+  /* Agrega una transición suave al efecto */
+}
+
+.menuc>li {
+
+  display: inline-block;
+}
+
+.menuc>li>a {
+  display: block;
+  padding: 16px 22px;
+  color: rgb(179, 194, 212);
+  text-decoration: none;
+}
+
+.menuc li a:hover {
+  color: #19A7CE;
+}
+
+.logos-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/*CSS MODALES*/
+
+.modal1,
+.modal2 {
+  opacity: 0;
+  /* Por defecto, ocultar el modal */
+  position: fixed;
+  /* Posición fija para que se mantenga en la pantalla */
+  z-index: 1;
+  /* Asegúrate de que el modal esté en la parte superior */
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Agrega desplazamiento si el contenido es demasiado largo */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Fondo semitransparente */
+  pointer-events: none;
+}
+
+.modal1-show,
+.modal2-show {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.modal1-content,
+.modal2-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+}
+
+.close1 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close1:hover,
+.close1:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*FORMULARIO*/
+.form {
+  width: 450px;
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  background: #AFD3E2;
+  border-radius: 5px;
+}
+
+/*--TITULO-----------------------*/
+.titulo {
+  color: #080202;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-family: 'Copperplate Gothic';
+  font-weight: bold;
+}
+
+/*BLOQUE FORMULARIO*/
+.DATA {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  border: none;
+  border-left: 10px solid rgb(51, 9, 166);
+  transition: all .5s ease;
+}
+
+.DATA:placeholder {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+
+.cajas:hover,
+.cajas:focus {
+  border-left: 10px solid #000000;
+}
+
+/*TERMINOS-Y-CONDICIONES*/
+.terminoa {
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
+}
+
+.terminob {
+  color: rgb(51, 9, 166);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*BOTON REGISTRO*/
+.btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 2px;
+  border: none;
+  margin: 20px 0;
+  font-size: 15px;
+  background: #146C94;
+  color: white;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.btn:hover {
+  background: #133043;
+}
+
+/*CUENTA EXISTENTE*/
+.cambio-mod {
+  text-align: center;
+  color: rgb(51, 9, 166);
+  font-weight: bold;
+  text-decoration: none;
+}

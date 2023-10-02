@@ -1,0 +1,156 @@
+/* Permite el uso de fonts externas */
+@font-face {
+    font-family: amazon;
+    src: url("../resources/fonts y pdfs/amazon.ttf") format("truetype");
+    /* En la ruta siempre poner la barra diagonal, no la invertida */
+}
+
+* {
+    font-family: 'amazon', 'Times New Roman', Times, serif;
+}
+
+body {
+    margin: 20px;
+}
+
+.inicio-icono {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.butacas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px;
+}
+
+.butacas-container td {
+    position: relative;
+}
+
+/* identificador de las butacas  */
+.butacas-container .butaca-tooltip {
+    position: absolute;
+    top: -10px;
+    background-color: #fff;
+    color: #000;
+    padding: 5px;
+    border-radius: 2px;
+    border-bottom: #000;
+    display: none;
+    font-size: small;
+}
+
+.butacas-container td:hover .butaca-tooltip {
+    display: block;
+}
+
+
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../resources/img/chair.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+label:hover {
+    background-color: green;
+}
+
+input[type="checkbox"]:checked+label {
+    background-color: red;
+}
+
+input[type="checkbox"]:checked+label:hover {
+    background-color: red;
+    cursor: not-allowed;
+}
+
+.botn {
+    width: 150px;
+    display: block;
+    padding: 10px;
+    background: #146C94;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.ocupada {
+    /* Estilos para las butacas ocupadas */
+    background-color: red;
+}
+
+.estado-butacas-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    /* Margen inferior  */
+}
+
+.estado-butacas {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.estado-butacas div {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+.estado-disponible {
+    background-color: #fff;
+}
+
+.estado-seleccionado {
+    background-color: green;
+}
+
+.estado-ocupado {
+    background-color: red;
+}
+
+.precio {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 560px;
+}

@@ -1,0 +1,870 @@
+/* Permite el uso de fonts externas */
+@font-face {
+    font-family: amazon;
+    src: url("../resources/fonts y pdfs/amazon.ttf") format("truetype");
+    /* En la ruta siempre poner la barra diagonal, no la invertida */
+}
+
+/*Animación que expande y reduce*/
+@keyframes animacion {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'amazon', 'Times New Roman', Times, serif;
+}
+
+.panel ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(51, 9, 166);
+}
+
+.menucine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.menucine>li {
+    flex: 1;
+    text-align: center;
+
+}
+
+
+.menucine>li:last-child {
+    text-align: right;
+}
+
+.menucine>li>a {
+    display: block;
+    padding: 16px 22px;
+    color: #080202;
+    text-decoration: none;
+    letter-spacing: 2px;
+    align-items: center;
+}
+
+.menucine li a:hover {
+    color: rgb(51, 9, 166);
+}
+
+.Scontacto {
+    position: absolute;
+    background: whitesmoke;
+    width: 15%;
+    display: none;
+
+}
+
+.Scontacto li a {
+    display: block;
+    padding: 10px;
+    color: rgb(28, 1, 28);
+    text-decoration: none;
+}
+
+.menucine li:hover .Scontacto {
+    display: block;
+}
+
+/*INICIO PELICULA SLIDER*/
+
+/* PELICULA PRINCIPAL1 */
+.pelicula-principal1 {
+    font-size: 17px;
+    min-height: 40.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(../resources/img/pp6.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+}
+
+.pelicula-principal1 .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.pelicula-principal1 .titulo {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+    color: #fff;
+    font-family: 'amazon', 'Times New Roman', Times, serif;
+}
+
+.pelicula-principal1 .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+
+/* PELICULA PRINCIPAL2 */
+
+.pelicula-principal2 {
+    font-size: 17px;
+    min-height: 40.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(../resources/img/pp1.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+}
+
+.pelicula-principal2 .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.pelicula-principal2 .titulo {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+    color: #fff;
+    font-family: 'amazon', 'Times New Roman', Times, serif;
+}
+
+.pelicula-principal2 .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+
+
+/* PELICULA PRINCIPAL3 */
+
+.pelicula-principal3 {
+    font-size: 17px;
+    min-height: 40.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(../resources/img/pp2.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+}
+
+.pelicula-principal3 .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.pelicula-principal3 .titulo {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+    color: #fff;
+    font-family: 'amazon', 'Times New Roman', Times, serif;
+}
+
+.pelicula-principal3 .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+
+/*FIN PELICULA SLIDER*/
+
+/*INICIO SLIDER*/
+
+body {
+    background-color: lightgrey;
+    font-family: sans-serif;
+}
+
+.container {
+    margin: auto;
+    background-color: white;
+    width: 1465px;
+    padding: 0px;
+
+
+}
+
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+
+.slider {
+    position: relative;
+
+}
+
+ul.slides {
+    position: relative;
+    width: 1465px;
+    height: 600px;
+
+}
+
+ul.slides li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: none;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background: #fff;
+}
+
+.slide:target {
+    animation-name: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+}
+
+ul.slides li img {
+    height: 32px;
+    object-fit: none;
+
+
+}
+
+ul.slides li:first-child {
+    opacity: 1;
+    /*Mostramos el primer <li>*/
+
+}
+
+ul.slides li:target {
+    opacity: 1;
+    /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+.slide {
+    width: 100vw;
+    flex-shrink: 0;
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+
+}
+
+.menu {
+    left: 0;
+    right: 0;
+    bottom: -200px;
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(50, 31, 31, 0.5);
+    z-index: 100;
+    margin-top: 90px;
+
+}
+
+.menu li {
+    margin: 0 0.5rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.menu li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(49, 47, 47);
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+}
+
+
+.slides .boton {
+    background: #fff;
+    border: none;
+    border-radius: 1.31em;
+    padding: 0.93em 1.87em;
+    color: #000;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+}
+
+.slides .boton img {
+    margin-right: 1.25em;
+}
+
+/*FIN SLIDER*/
+
+
+/*AGREGANDO AQUIIII PRUEBAAAA*/
+.icono {
+    position: relative;
+    align-items: center;
+}
+
+.icono .Scontacto {
+    position: absolute;
+    background: whitesmoke;
+    width: 90%;
+    display: none;
+    top: 100%;
+    left: 0;
+    padding: 0;
+}
+
+.cerrar-sesion {
+    text-align: center;
+}
+
+.icono:hover .Scontacto {
+    display: block;
+}
+
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo-central {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(51, 9, 166);
+    font-size: 50px;
+    color: whitesmoke;
+    letter-spacing: 2px;
+    animation: animacion 4s;
+    /* Aplica la animación de expandir y reducir en 4sg*/
+}
+
+/* ---- ----- ----- Aquí comienza el cod de Pelicula Principal ----- ----- ----- */
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+.pelicula-principal {
+    font-size: 17px;
+    min-height: 40.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(../resources/img/pp6.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+}
+
+.pelicula-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.pelicula-principal .titulo {
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+    color: #fff;
+    font-family: 'amazon', 'Times New Roman', Times, serif;
+}
+
+.pelicula-principal .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+
+.pelicula-principal .boton {
+    background: #fff;
+    border: none;
+    border-radius: 0.31em;
+    padding: 1em 1em;
+    color: #fff;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+}
+
+.pelicula-principal .boton:hover {
+    background: rgba(241, 214, 214, 0.5);
+    color: #000;
+}
+
+.pelicula-principal .boton img {
+    margin-right: 1em;
+}
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+    header .logotipo {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pelicula-principal {
+        font-size: 14px;
+    }
+
+    .pelicula-principal .descripcion {
+        max-width: 100%;
+    }
+}
+
+.bloque {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.t-especial {
+    font-size: 30px;
+    font-weight: bold;
+    color: #110303;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cartelera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cartelera li {
+    list-style-type: none;
+    flex: 0 0 calc(25% - 10px);
+    /* Ajusta el tamaño de los elementos para mostrar 4 por línea */
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.cartelera li img {
+    width: 300px;
+    /* Establece el ancho deseado para las imágenes */
+    height: 400px;
+    /* Establece la altura deseada para las imágenes */
+    transition: transform 0.3s ease;
+}
+
+.cartelera li img:hover {
+    transform: scale(1.2);
+    /* Aumenta el tamaño de la imagen al hacer hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(51, 9, 166);
+    color: #F9F5F6;
+}
+
+.panel2 ul {
+    list-style: none;
+}
+
+.panel2 li img:hover {
+    transform: scale(1.2);
+    /* Aumenta el tamaño del icono al hacer hover */
+    transition: transform 0.2s ease-in-out;
+    /* Agrega una transición suave al efecto */
+}
+
+.menuc>li {
+
+    display: inline-block;
+}
+
+.menuc>li>a {
+    display: block;
+    padding: 16px 22px;
+    color: rgb(179, 194, 212);
+    text-decoration: none;
+}
+
+.menuc li a:hover {
+    color: #19A7CE;
+}
+
+.logos-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modalp1,
+.modalp2,
+.modalp3,
+.modalp4,
+.modalp5,
+.modalp6,
+.modalp7,
+.modalp8,
+.modalp9 {
+    opacity: 0;
+    /* Por defecto, ocultar el modal */
+    position: fixed;
+    /* Posición fija para que se mantenga en la pantalla */
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Agrega desplazamiento si el contenido es demasiado largo */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo semitransparente */
+    pointer-events: none;
+}
+
+.modal-showp1,
+.modal-showp2,
+.modal-showp3,
+.modal-showp4,
+.modal-showp5,
+.modal-showp6,
+.modal-showp7,
+.modal-showp8,
+.modal-showp9 {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.modal-contentp1,
+.modal-contentp2,
+.modal-contentp3,
+.modal-contentp4,
+.modal-contentp5,
+.modal-contentp6,
+.modal-contentp7,
+.modal-contentp8,
+.modal-contentp9 {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 50%;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    transition: transform 1s;
+    transform: translateY(0%);
+    border-radius: 10px;
+}
+
+.closep1,
+.closep2,
+.closep3,
+.closep4,
+.closep5,
+.closep6,
+.closep7,
+.closep8,
+.closep9 {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #c44a4a;
+    color: #fff;
+    line-height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.closep1:hover,
+.closep1:focus,
+.closep2:hover,
+.closep2:focus,
+.closep3:hover,
+.closep3:focus,
+.closep4:hover,
+.closep4:focus,
+.closep5:hover,
+.closep5:focus,
+.closep6:hover,
+.closep6:focus,
+.closep7:hover,
+.closep7:focus,
+.closep8:hover,
+.closep8:focus,
+.closep9:hover,
+.closep9:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modalp1>.modal-contentp1>img,
+.modalp2>.modal-contentp2>img,
+.modalp3>.modal-contentp3>img,
+.modalp4>.modal-contentp4>img,
+.modalp5>.modal-contentp5>img,
+.modalp6>.modal-contentp6>img,
+.modalp7>.modal-contentp7>img,
+.modalp8>.modal-contentp8>img,
+.modalp9>.modal-contentp9>img {
+    width: 18%;
+    height: 52%;
+    background: #fff;
+    margin-bottom: -100px;
+}
+
+.modalp1>.modal-contentp1>h2,
+.modalp2>.modal-contentp2>h2,
+.modalp3>.modal-contentp3>h2,
+.modalp4>.modal-contentp4>h2,
+.modalp5>.modal-contentp5>h2,
+.modalp6>.modal-contentp6>h2,
+.modalp7>.modal-contentp7>h2,
+.modalp8>.modal-contentp8>h2,
+.modalp9>.modal-contentp9>h2 {
+    margin-top: 10px;
+}
+
+
+.cinema-synopsis,
+.cinema-censorship {
+    margin-bottom: -1000px;
+}
+
+.cinema-censorship {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+.cinema-schedule {
+    flex: 1;
+    text-align: left;
+    /* Alinear el texto a la derecha */
+    align-self: center;
+    /* Alineación vertical al centro */
+    margin-top: -10px;
+    /* Ajustar margen superior negativo */
+    margin-right: -60px;
+    /* Agregar un margen derecho para desplazarlo hacia la derecha */
+}
+
+
+.schedule-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 110px;
+}
+
+.schedule-buttons {
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+.schedule-buttons button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background: #146C94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.schedule-buttons button:hover {
+    background-color: #075072;
+    transform: scale(1.2);
+}
+
+.schedule-buttons button a {
+    color: #fff;
+}
+
+.modal1,
+.modal2 {
+    opacity: 0;
+    /* Por defecto, ocultar el modal */
+    position: fixed;
+    /* Posición fija para que se mantenga en la pantalla */
+    z-index: 1;
+    /* Asegúrate de que el modal esté en la parte superior */
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Agrega desplazamiento si el contenido es demasiado largo */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo semitransparente */
+    pointer-events: none;
+}
+
+.modal1-show,
+.modal2-show {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.modal1-content,
+.modal2-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close1:hover,
+.close1:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*FORMULARIO*/
+.form {
+    width: 450px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    background: #AFD3E2;
+    border-radius: 5px;
+}
+
+/*--TITULO-----------------------*/
+.titulo {
+    color: #080202;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-family: 'Copperplate Gothic';
+    font-weight: bold;
+}
+
+/*BLOQUE FORMULARIO*/
+.DATA {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    border: none;
+    border-left: 10px solid #146C94;
+    transition: all .5s ease;
+
+}
+
+.DATA:placeholder {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+
+.cajas:hover,
+.cajas:focus {
+    border-left: 10px solid #000000;
+}
+
+/*TERMINOS-Y-CONDICIONES*/
+.terminoa {
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+.terminob {
+    color: rgb(51, 9, 166);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*BOTON REGISTRO*/
+.btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 2px;
+    border: none;
+    margin: 20px 0;
+    font-size: 15px;
+    background: #146C94;
+    color: white;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.btn:hover {
+    background: #133043;
+}
+
+/*CUENTA EXISTENTE*/
+.cambio-mod {
+    text-align: center;
+    color: rgb(51, 9, 166);
+    font-weight: bold;
+    text-decoration: none;
+}
